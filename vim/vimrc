@@ -1,0 +1,17 @@
+colorscheme oceandeep
+set tabstop=4
+set shiftwidth=4
+set smarttab
+set smartindent
+set expandtab
+#set guifont=Fixed\ 9
+set guioptions=agirt
+syntax enable
+
+highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$/
+autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
+autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+autocmd BufWinLeave * call clearmatches()
+
